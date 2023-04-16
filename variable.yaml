@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+  vars:
+    name: jenkins.yaml  
+  tasks:
+    - name: copying a file
+      copy:
+        src: "{{name}}"
+        dest: /home/ec2-user/jenkins.yaml
+    - name: create a file
+      file:
+        name: /home/ec2-user/pavan.txt
+        state: touch     
+        

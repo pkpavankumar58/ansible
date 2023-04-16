@@ -1,0 +1,5 @@
+packages:
+  - httpd
+  - git
+  - docker
+  - java  

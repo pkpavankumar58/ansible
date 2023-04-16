@@ -1,0 +1,9 @@
+- hosts: all
+  become: yes
+  vars_files:
+    - list-var.yaml
+  tasks:
+    - name: installing packages
+      yum:
+        pkg: "{{packages}}"
+        state: installed  
