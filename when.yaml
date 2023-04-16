@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: install httpd when os is redhat
+      yum:
+        pkg: httpd
+        state: installed
+      when: ansible_os_family == "RedHat"
+    - name: install apache2 when os is Debian
+      apt:
+        pkg: apache2
+        state: installed
+      when: ansible_os_family == "Debian"      
+           
